@@ -1,0 +1,28 @@
+{
+  "name": "Google Maps Layers smoke test",
+  "objective": "Open Google Maps and verify its map layers panel",
+  "package": "com.google.android.apps.maps",
+  "preconditions": [
+    "Install an up-to-date Google Maps app on the emulator.",
+    "Complete onboarding and close any prompts so Maps opens to the main map."
+  ],
+  "assumptions": [
+    "This template uses English accessibility labels. Use the UI hierarchy in Device Explorer to confirm the labels for your version."
+  ],
+  "steps": [
+    {
+      "action": {"schema_version": 1, "action": "launch_app"},
+      "assertions": [{"type": "application_running"}]
+    },
+    {
+      "action": {
+        "schema_version": 1,
+        "action": "tap",
+        "target": {"strategy": "description", "value": "Layers"}
+      },
+      "assertions": [
+        {"type": "element_visible", "target": {"strategy": "text", "value": "Map type"}}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "objective": "Take a photo, verify its preview, and close Camera",
+  "package": "com.android.camera2",
+  "preconditions": [
+    "Use the Camera app on the Pixel Fold emulator. Grant Camera permissions and dismiss any first-run prompts.",
+    "Start with Camera closed and the emulator unlocked."
+  ],
+  "assumptions": [],
+  "steps": [
+    {
+      "action": {"schema_version": 1, "action": "launch_app"},
+      "assertions": [
+        {"type": "element_enabled", "target": {"strategy": "resource_id", "value": "com.android.camera2:id/shutter_button"}}
+      ]
+    },
+    {
+      "action": {"schema_version": 1, "action": "tap", "target": {"strategy": "resource_id", "value": "com.android.camera2:id/shutter_button"}},
+      "assertions": [
+        {"type": "element_visible", "target": {"strategy": "resource_id", "value": "com.android.camera2:id/rounded_thumbnail_view"}}
+      ]
+    },
+    {
+      "action": {"schema_version": 1, "action": "tap", "target": {"strategy": "resource_id", "value": "com.android.camera2:id/rounded_thumbnail_view"}},
+      "assertions": [
+        {"type": "element_visible", "target": {"strategy": "resource_id", "value": "com.android.camera2:id/filmstrip_view"}},
+        {"type": "element_enabled", "target": {"strategy": "resource_id", "value": "com.android.camera2:id/filmstrip_bottom_control_edit"}}
+      ]
+    },
+    {
+      "action": {"schema_version": 1, "action": "press_back"},
+      "assertions": [
+        {"type": "element_visible", "target": {"strategy": "resource_id", "value": "com.android.camera2:id/shutter_button"}}
+      ]
+    },
+    {
+      "action": {"schema_version": 1, "action": "press_back"},
+      "assertions": [{"type": "application_not_foreground"}]
+    }
+  ]
+}

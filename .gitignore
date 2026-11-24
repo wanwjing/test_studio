@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+*.sqlite*
+.DS_Store
+.env
+.env.*
+/studio-config.txt

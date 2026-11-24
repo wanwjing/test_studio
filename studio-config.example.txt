@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8765,
+    "open_browser": false
+  },
+  "database_path": "~/.android-ai-test-studio/studio.sqlite",
+  "settings": {
+    "adb": "",
+    "llm": {
+      "schema_version": 1,
+      "provider": "mock",
+      "model": "mock",
+      "endpoint_url": "",
+      "vision": false,
+      "allow_remote": false,
+      "allow_remote_images": false,
+      "timeout_seconds": 20,
+      "temperature": 0.1,
+      "max_output_tokens": 2048,
+      "api_key_env": ""
+    },
+    "limits": {
+      "actions": 100,
+      "retries": 3,
+      "recoveries": 5,
+      "seconds": 600,
+      "repeated": 4
+    },
+    "report_screenshots": true
+  },
+  "emulator_path": "",
+  "emulator_headless": true,
+  "emulator_preview_interval_ms": 300,
+  "emulator_skin_overrides": {}
+}

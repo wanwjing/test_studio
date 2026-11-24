@@ -1,0 +1,41 @@
+{
+  "objective": "Search for Marina Bay Sands in Google Maps",
+  "package": "com.google.android.apps.maps",
+  "preconditions": [
+    "Open an up-to-date version of Google Maps and complete onboarding.",
+    "Start on the main map with an empty search field.",
+    "Use a device that can retrieve results for Marina Bay Sands."
+  ],
+  "assumptions": [
+    "English UI labels are used. Check the search field and suggestion selectors in Device Explorer for your Maps version."
+  ],
+  "steps": [
+    {
+      "action": {"schema_version": 1, "action": "launch_app"},
+      "assertions": [{"type": "application_running"}]
+    },
+    {
+      "action": {
+        "schema_version": 1,
+        "action": "tap",
+        "target": {"strategy": "text", "value": "Search here"}
+      },
+      "assertions": [{"type": "screen_transition"}]
+    },
+    {
+      "action": {"schema_version": 1, "action": "input_text", "text": "Marina Bay Sands"},
+      "assertions": [{"type": "application_running"}]
+    },
+    {
+      "action": {
+        "schema_version": 1,
+        "action": "tap",
+        "target": {"strategy": "text", "value": "Marina Bay Sands"}
+      },
+      "assertions": [
+        {"type": "screen_transition"},
+        {"type": "element_visible", "target": {"strategy": "text", "value": "Directions"}}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "provider": "openai-compatible",
+  "endpoint_url": "https://api.deepseek.com/chat/completions",
+  "model": "deepseek-flash",
+  "api_key_env": "DEEPSEEK_API_KEY",
+  "allow_remote": true,
+  "vision": true,
+  "allow_remote_images": true,
+  "timeout_seconds": 90,
+  "max_output_tokens": 8192
+}
